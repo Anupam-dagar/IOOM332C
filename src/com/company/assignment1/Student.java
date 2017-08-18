@@ -1,17 +1,17 @@
 package com.company.assignment1;
 
 public class Student {
-    private int rollNo;
+    private String rollNo;
     private String name;
     private int intelligence;
 
-    public Student(int rollNoArg, String nameArg, int intelligenceArg) {
+    public Student(String rollNoArg, String nameArg, int intelligenceArg) {
         rollNo = rollNoArg;
         name = nameArg;
         intelligence = intelligenceArg;
     }
 
-    public void setRollNo(int rollNoArg) {
+    public void setRollNo(String rollNoArg) {
         rollNo = rollNoArg;
     }
 
@@ -23,7 +23,7 @@ public class Student {
         intelligence = intelligenceArg;
     }
 
-    public int getRollNo() {
+    public String getRollNo() {
         return rollNo;
     }
 
