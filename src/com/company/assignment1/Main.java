@@ -1,17 +1,16 @@
 package com.company.assignment1;
 
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<Date> deadlineArray = new ArrayList<Date>();
         Scanner scan = new Scanner(System.in);
         int testCases = scan.nextInt();
+        Date temporary;
         while (testCases > 0)
         {
             String roll = scan.next();
@@ -19,6 +18,7 @@ public class Main {
             int intelligence = scan.nextInt();
             Student student = new Student(roll,name,intelligence);
             int noOfAssignments = scan.nextInt();
+            Date[] deadlineArray = new Date[noOfAssignments];
             for (int i = 0; i < noOfAssignments; i++)
             {
                 String assignId = scan.next();
@@ -30,13 +30,47 @@ public class Main {
                 int diff = scan.nextInt();
                 Date deadline = new Date(day,month,year);
                 Assignment assignment = new Assignment(diff, deadline, assignId, course, baseMark);
-                deadlineArray.add(deadline);
+                deadlineArray[i] = deadline;
+                System.out.println(assignment.getDeadline());
+
             }
             scan.close();
-            for (int i = 0; i < deadlineArray.size(); i++)
+            System.out.println(deadlineArray.length);
+            for (int i = 0; i < deadlineArray.length; i++)
             {
-                System.out.println(deadlineArray.get(i));
+                System.out.println(deadlineArray[i]);
             }
+            for (int i = 0; i < deadlineArray.length; i++)
+            {
+                for (int j = 0; j < deadlineArray.length; j++)
+                {
+                    if(deadlineArray[i].getYear() > deadlineArray[j].getYear())
+                    {
+                        temporary = deadlineArray[i];
+                        deadlineArray[i] = deadlineArray[j];
+                        deadlineArray[j] = temporary;
+                    }
+                    else if (deadlineArray[i].getYear() == deadlineArray[j].getYear())
+                    {
+                        if (deadlineArray[i].getMonth() < deadlineArray[j].getMonth())
+                        {
+                            temporary = deadlineArray[i];
+                            deadlineArray[i] = deadlineArray[j];
+                            deadlineArray[j] = temporary;
+                        }
+                        else if (deadlineArray[i].getMonth() == deadlineArray[j].getMonth())
+                        {
+                            if (deadlineArray[i].getDay() < deadlineArray[j].getDay())
+                            {
+                                temporary = deadlineArray[i];
+                                deadlineArray[i] = deadlineArray[j];
+                                deadlineArray[j] = temporary;
+                            }
+                        }
+                    }
+                }
+            }
+
             testCases--;
         }
 
