@@ -44,6 +44,7 @@ public class Date {
         return year;
     }
 
+    //this returns date in dd/mm/yyyy format
     @Override
     public String toString(){
         return (this.getDay() + "/" + this.getMonth() + "/" + this.getYear());

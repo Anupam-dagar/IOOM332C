@@ -7,38 +7,51 @@ public class Student {
     private int intelligence;
     private int marksObtained;
 
+    //student class constructor
     public Student(String rollNoArg, String nameArg, int intelligenceArg) {
         rollNo = rollNoArg;
         name = nameArg;
         intelligence = intelligenceArg;
     }
 
+    //function to set roll no. of student
     public void setRollNo(String rollNoArg) {
         rollNo = rollNoArg;
     }
 
+    //function to set name of student
     public void setName(String nameArg) {
         name = nameArg;
     }
 
+    //function to set intelligence of student
     public void setIntelligence(int intelligenceArg) {
         intelligence = intelligenceArg;
     }
 
+    //function to get roll no of student
     public String getRollNo() {
         return rollNo;
     }
 
+    //function to get name of student
     public String getName() {
         return name;
     }
 
+    //function to get intelligence of student
     public int getIntelligence() {
         return intelligence;
     }
 
+    //function to set marksobtained of student
     public void setMarksObtained(int baseMarks, int intelligence)
     {
         marksObtained = baseMarks * intelligence;
+    }
+
+    //function to get marks obtained by student
+    public int getMarksObtained() {
+        return marksObtained;
     }
 }

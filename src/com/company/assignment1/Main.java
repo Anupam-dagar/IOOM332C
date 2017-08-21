@@ -1,7 +1,5 @@
 package com.company.assignment1;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +8,10 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         int testCases = scan.nextInt();
-        Date temporary;
+        int totalMarks = 0;
+        Assignment assignment = new Assignment();
+
+        //loop to scan values and create objects
         while (testCases > 0)
         {
             String roll = scan.next();
@@ -18,7 +19,7 @@ public class Main {
             int intelligence = scan.nextInt();
             Student student = new Student(roll,name,intelligence);
             int noOfAssignments = scan.nextInt();
-            Date[] deadlineArray = new Date[noOfAssignments];
+            Assignment[] assignmentArray = new Assignment[noOfAssignments];
             for (int i = 0; i < noOfAssignments; i++)
             {
                 String assignId = scan.next();
@@ -28,52 +29,80 @@ public class Main {
                 int year = scan.nextInt();
                 int baseMark = scan.nextInt();
                 int diff = scan.nextInt();
+
+                //creating objects
                 Date deadline = new Date(day,month,year);
-                Assignment assignment = new Assignment(diff, deadline, assignId, course, baseMark);
-                deadlineArray[i] = deadline;
-                System.out.println(assignment.getDeadline());
+                assignment = new Assignment(diff, deadline, assignId, course, baseMark);
+
+                //insert assignment object in an array
+                assignmentArray[i] = assignment;
 
             }
-            scan.close();
-            System.out.println(deadlineArray.length);
-            for (int i = 0; i < deadlineArray.length; i++)
+
+            //sorting the assignment array according to deadline and if deadline is same then according to assignment ID
+            sort(assignmentArray);
+
+            //output
+            System.out.println(student.getRollNo() + " " + student.getName());
+            for (int i = 0; i < assignmentArray.length; i++)
             {
-                System.out.println(deadlineArray[i]);
-            }
-            for (int i = 0; i < deadlineArray.length; i++)
-            {
-                for (int j = 0; j < deadlineArray.length; j++)
+                if (student.getIntelligence() >= assignmentArray[i].getDifficulty())
                 {
-                    if(deadlineArray[i].getYear() > deadlineArray[j].getYear())
+                    student.setMarksObtained(assignmentArray[i].getBaseMarks(), student.getIntelligence());
+                    totalMarks = totalMarks + student.getMarksObtained();
+                    System.out.println(assignmentArray[i].getAssignmentId() + " " + assignmentArray[i].getCourseId() + " " + student.getMarksObtained());
+                }
+            }
+            System.out.println(totalMarks);
+            testCases--;
+        }
+        scan.close();
+
+
+
+    }
+    //function to sort assignment array according to deadline and assignment ID
+    public static void sort(Assignment[] assignmentArray)
+    {
+        Assignment temporary = new Assignment();
+        for (int i = 0; i < assignmentArray.length - 1; i++)
+        {
+            for (int j = 0; j < assignmentArray.length - i - 1; j++)
+            {
+                if(assignmentArray[i].getDeadline().getYear() > assignmentArray[j].getDeadline().getYear())
+                {
+                    temporary = assignmentArray[j];
+                    assignmentArray[j] = assignmentArray[j+1];
+                    assignmentArray[j+1] = temporary;
+                }
+                else if (assignmentArray[j].getDeadline().getYear() == assignmentArray[j+1].getDeadline().getYear())
+                {
+                    if (assignmentArray[j].getDeadline().getMonth() > assignmentArray[j+1].getDeadline().getMonth())
                     {
-                        temporary = deadlineArray[i];
-                        deadlineArray[i] = deadlineArray[j];
-                        deadlineArray[j] = temporary;
+                        temporary = assignmentArray[j];
+                        assignmentArray[j] = assignmentArray[j+1];
+                        assignmentArray[j+1] = temporary;
                     }
-                    else if (deadlineArray[i].getYear() == deadlineArray[j].getYear())
+                    else if (assignmentArray[j].getDeadline().getMonth() == assignmentArray[j+1].getDeadline().getMonth())
                     {
-                        if (deadlineArray[i].getMonth() < deadlineArray[j].getMonth())
+                        if (assignmentArray[j].getDeadline().getDay() == assignmentArray[j+1].getDeadline().getDay())
                         {
-                            temporary = deadlineArray[i];
-                            deadlineArray[i] = deadlineArray[j];
-                            deadlineArray[j] = temporary;
-                        }
-                        else if (deadlineArray[i].getMonth() == deadlineArray[j].getMonth())
-                        {
-                            if (deadlineArray[i].getDay() < deadlineArray[j].getDay())
+                            if (assignmentArray[j].getAssignmentId().compareTo(assignmentArray[j+1].getAssignmentId()) > 0)
                             {
-                                temporary = deadlineArray[i];
-                                deadlineArray[i] = deadlineArray[j];
-                                deadlineArray[j] = temporary;
+                                temporary = assignmentArray[j];
+                                assignmentArray[j] = assignmentArray[j+1];
+                                assignmentArray[j+1] = temporary;
                             }
+                        }
+                        else if (assignmentArray[j].getDeadline().getDay() > assignmentArray[j+1].getDeadline().getDay())
+                        {
+                            temporary = assignmentArray[j];
+                            assignmentArray[j] = assignmentArray[j+1];
+                            assignmentArray[j+1] = temporary;
                         }
                     }
                 }
             }
-
-            testCases--;
         }
-
-
     }
 }
