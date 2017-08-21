@@ -1,5 +1,5 @@
 package com.company.assignment1;
-
+//Assignment class which contains all information about the assignment
 public class Assignment {
     private int difficulty;
     private Date deadline = new Date(0,0,0);
