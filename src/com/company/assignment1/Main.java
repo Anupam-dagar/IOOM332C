@@ -14,6 +14,7 @@ public class Main {
         //loop to scan values and create objects
         while (testCases > 0)
         {
+            totalMarks = 0;
             String roll = scan.next();
             String name = scan.next();
             int intelligence = scan.nextInt();
@@ -87,12 +88,41 @@ public class Main {
                     {
                         if (assignmentArray[j].getDeadline().getDay() == assignmentArray[j+1].getDeadline().getDay())
                         {
-                            if (assignmentArray[j].getAssignmentId().compareTo(assignmentArray[j+1].getAssignmentId()) > 0)
+                            if (assignmentArray[j].getAssignmentId().charAt(0) <= '9' && assignmentArray[j+1].getAssignmentId().charAt(0) <= '9')
+                            {
+                                if(Integer.parseInt(assignmentArray[j].getAssignmentId()) > Integer.parseInt(assignmentArray[j+1].getAssignmentId()))
+                                {
+                                    temporary = assignmentArray[j];
+                                    assignmentArray[j] = assignmentArray[j+1];
+                                    assignmentArray[j+1] = temporary;
+                                }
+                            }
+                            else if (assignmentArray[j].getAssignmentId().charAt(0) >= 'A' && assignmentArray[j+1].getAssignmentId().charAt(0) <= '9')
                             {
                                 temporary = assignmentArray[j];
                                 assignmentArray[j] = assignmentArray[j+1];
                                 assignmentArray[j+1] = temporary;
                             }
+                            else if (assignmentArray[j].getAssignmentId().charAt(0) >= 'A' && assignmentArray[j+1].getAssignmentId().charAt(0) >= 'A')
+                            {
+                                if (assignmentArray[j].getAssignmentId().charAt(0) == assignmentArray[j+1].getAssignmentId().charAt(0))
+                                {
+                                    if (Integer.parseInt(assignmentArray[j].getAssignmentId().substring(1)) > Integer.parseInt(assignmentArray[j+1].getAssignmentId().substring(1)) )
+                                    {
+                                        temporary = assignmentArray[j];
+                                        assignmentArray[j] = assignmentArray[j+1];
+                                        assignmentArray[j+1] = temporary;
+                                    }
+                                }
+                                if (assignmentArray[j].getAssignmentId().charAt(0) > assignmentArray[j+1].getAssignmentId().charAt(0))
+                                {
+                                    temporary = assignmentArray[j];
+                                    assignmentArray[j] = assignmentArray[j+1];
+                                    assignmentArray[j+1] = temporary;
+                                }
+
+                            }
+
                         }
                         else if (assignmentArray[j].getDeadline().getDay() > assignmentArray[j+1].getDeadline().getDay())
                         {
