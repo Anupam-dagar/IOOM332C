@@ -57,15 +57,15 @@ public class Main {
                 System.out.println(batch.getStudentarray()[i].getRollNo() + " " + batch.getStudentarray()[i].getName());
                 if (batch.getStudentarray()[i].getType() == 0)
                 {
-                    sort(assignmentArray);
+                    sort.sortarray(assignmentArray);
                 }
                 else if (batch.getStudentarray()[i].getType() == 1)
                 {
-                    sort1(assignmentArray);
+                    sort.sort1(assignmentArray);
                 }
                 else
                 {
-                    sort2(assignmentArray);
+                    sort.sort2(assignmentArray);
                 }
                 for (int l = 0; l < noOfAssignments; l++)
                 {
@@ -80,143 +80,5 @@ public class Main {
             testCases--;
         }
         scan.close();
-    }
-
-
-
-    //function to sort assignment array according to deadline and assignment ID
-    public static void sort(Assignment[] assignmentArray)
-    {
-        Assignment temporary = new Assignment();
-        for (int i = 0; i < assignmentArray.length - 1; i++)
-        {
-            for (int j = 0; j < assignmentArray.length - i - 1; j++)
-            {
-                if(assignmentArray[i].getDeadline().getYear() > assignmentArray[j].getDeadline().getYear())
-                {
-                    temporary = assignmentArray[j];
-                    assignmentArray[j] = assignmentArray[j+1];
-                    assignmentArray[j+1] = temporary;
-                }
-                else if (assignmentArray[j].getDeadline().getYear() == assignmentArray[j+1].getDeadline().getYear())
-                {
-                    if (assignmentArray[j].getDeadline().getMonth() > assignmentArray[j+1].getDeadline().getMonth())
-                    {
-                        temporary = assignmentArray[j];
-                        assignmentArray[j] = assignmentArray[j+1];
-                        assignmentArray[j+1] = temporary;
-                    }
-                    else if (assignmentArray[j].getDeadline().getMonth() == assignmentArray[j+1].getDeadline().getMonth())
-                    {
-                        if (assignmentArray[j].getDeadline().getDay() == assignmentArray[j+1].getDeadline().getDay())
-                        {
-                            if (assignmentArray[j].getAssignmentId().charAt(0) <= '9' && assignmentArray[j+1].getAssignmentId().charAt(0) <= '9')
-                            {
-                                if(Integer.parseInt(assignmentArray[j].getAssignmentId()) > Integer.parseInt(assignmentArray[j+1].getAssignmentId()))
-                                {
-                                    temporary = assignmentArray[j];
-                                    assignmentArray[j] = assignmentArray[j+1];
-                                    assignmentArray[j+1] = temporary;
-                                }
-                            }
-                            else if (assignmentArray[j].getAssignmentId().charAt(0) >= 'A' && assignmentArray[j+1].getAssignmentId().charAt(0) <= '9')
-                            {
-                                temporary = assignmentArray[j];
-                                assignmentArray[j] = assignmentArray[j+1];
-                                assignmentArray[j+1] = temporary;
-                            }
-                            else if (assignmentArray[j].getAssignmentId().charAt(0) >= 'A' && assignmentArray[j+1].getAssignmentId().charAt(0) >= 'A')
-                            {
-                                if (assignmentArray[j].getAssignmentId().charAt(0) == assignmentArray[j+1].getAssignmentId().charAt(0))
-                                {
-                                    if (Integer.parseInt(assignmentArray[j].getAssignmentId().substring(1)) > Integer.parseInt(assignmentArray[j+1].getAssignmentId().substring(1)) )
-                                    {
-                                        temporary = assignmentArray[j];
-                                        assignmentArray[j] = assignmentArray[j+1];
-                                        assignmentArray[j+1] = temporary;
-                                    }
-                                }
-                                if (assignmentArray[j].getAssignmentId().charAt(0) > assignmentArray[j+1].getAssignmentId().charAt(0))
-                                {
-                                    temporary = assignmentArray[j];
-                                    assignmentArray[j] = assignmentArray[j+1];
-                                    assignmentArray[j+1] = temporary;
-                                }
-
-                            }
-
-                        }
-                        else if (assignmentArray[j].getDeadline().getDay() > assignmentArray[j+1].getDeadline().getDay())
-                        {
-                            temporary = assignmentArray[j];
-                            assignmentArray[j] = assignmentArray[j+1];
-                            assignmentArray[j+1] = temporary;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public static void sort1(Assignment[] assignmentArray)
-    {
-        Assignment temporary = new Assignment();
-        for (int i = 0; i < assignmentArray.length - 1; i++)
-        {
-            for (int j = 0; j < assignmentArray.length - i - 1; j++)
-            {
-                if (assignmentArray[j].getBaseMarks() < assignmentArray[j+1].getBaseMarks())
-                {
-                    temporary = assignmentArray[j];
-                    assignmentArray[j] = assignmentArray[j+1];
-                    assignmentArray[j+1] = temporary;
-                }
-            }
-        }
-    }
-
-    public static void sort2(Assignment[] assignmentArray)
-    {
-        Assignment temporary = new Assignment();
-        for (int i = 0; i < assignmentArray.length - 1; i++)
-        {
-            for (int j = 0; j < assignmentArray.length - i -1; j++)
-            {
-                if (assignmentArray[j].getAssignmentId().charAt(0) <= '9' && assignmentArray[j+1].getAssignmentId().charAt(0) <= '9')
-                {
-                    if(Integer.parseInt(assignmentArray[j].getAssignmentId()) > Integer.parseInt(assignmentArray[j+1].getAssignmentId()))
-                    {
-                        temporary = assignmentArray[j];
-                        assignmentArray[j] = assignmentArray[j+1];
-                        assignmentArray[j+1] = temporary;
-                    }
-                }
-                else if (assignmentArray[j].getAssignmentId().charAt(0) >= 'A' && assignmentArray[j+1].getAssignmentId().charAt(0) <= '9')
-                {
-                    temporary = assignmentArray[j];
-                    assignmentArray[j] = assignmentArray[j+1];
-                    assignmentArray[j+1] = temporary;
-                }
-                else if (assignmentArray[j].getAssignmentId().charAt(0) >= 'A' && assignmentArray[j+1].getAssignmentId().charAt(0) >= 'A')
-                {
-                    if (assignmentArray[j].getAssignmentId().charAt(0) == assignmentArray[j+1].getAssignmentId().charAt(0))
-                    {
-                        if (Integer.parseInt(assignmentArray[j].getAssignmentId().substring(1)) > Integer.parseInt(assignmentArray[j+1].getAssignmentId().substring(1)) )
-                        {
-                            temporary = assignmentArray[j];
-                            assignmentArray[j] = assignmentArray[j+1];
-                            assignmentArray[j+1] = temporary;
-                        }
-                    }
-                    if (assignmentArray[j].getAssignmentId().charAt(0) > assignmentArray[j+1].getAssignmentId().charAt(0))
-                    {
-                        temporary = assignmentArray[j];
-                        assignmentArray[j] = assignmentArray[j+1];
-                        assignmentArray[j+1] = temporary;
-                    }
-
-                }
-            }
-        }
     }
 }
