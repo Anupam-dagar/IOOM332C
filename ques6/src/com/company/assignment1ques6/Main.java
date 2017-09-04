@@ -7,7 +7,6 @@ public class Main {
     //main function
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int sum = 0;
         int testCases = scan.nextInt();
 
         //loop to run testcases
@@ -23,8 +22,6 @@ public class Main {
                 batch.getStudentarray()[l] = new Student(rollNo, name);
             }
             for (int l = 0; l < m; l++) {
-                //sum variable for calculating total marks in each assignment
-                sum = 0;
                 //variable j, k and z to insert in array of assignment typeZero, typeOne and typeTwo respectively
                 int j = 0;
                 int k = 0;
@@ -72,21 +69,21 @@ public class Main {
                 //calculating grandtotal in sum
                 for (int i = 0; i < assignmentZeroArray.length; i++) {
                     if (assignmentZeroArray[i] != null) {
-                        sum = sum + assignmentZeroArray[i].getTotalMarks();
+                        batch.getStudentarray()[l].setSum(assignmentZeroArray[i].getTotalMarks());
                     }
                 }
                 for (int i = 0; i < assignmentOneArray.length; i++) {
                     if (assignmentOneArray[i] != null) {
-                        sum = sum + assignmentOneArray[i].getTotalMarks();
+                        batch.getStudentarray()[l].setSum(assignmentOneArray[i].getTotalMarks());
                     }
                 }
                 for (int i = 0; i < assignmentTwoArray.length; i++) {
                     if (assignmentTwoArray[i] != null) {
-                        sum = sum + assignmentTwoArray[i].getMarksGiven();
+                        batch.getStudentarray()[l].setSum(assignmentTwoArray[i].getMarksGiven());
                     }
                 }
                 System.out.println(batch.getStudentarray()[check].getRollno() + " " + batch.getStudentarray()[check].getName());
-                System.out.println(sum);
+                System.out.println(batch.getStudentarray()[l].getSum());
                 for (int i = 0; i < noOfAssignments; i++)
                 {
                     System.out.println(assignmentIdarray[i] + " " + marksArray[i]);

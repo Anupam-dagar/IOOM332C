@@ -7,6 +7,7 @@ public class Student {
     private int intelligence;
     private int marksObtained;
     private int type;
+    private int totalMarks = 0;
 
     //student class constructor
     public Student(String rollNoArg, String nameArg, int intelligenceArg, int typeArg) {
@@ -35,6 +36,11 @@ public class Student {
 
     public void setType(int typeArg) {
         type = typeArg;
+    }
+
+    public void setTotalMarks(int marksObtainedArg)
+    {
+        totalMarks = totalMarks + marksObtainedArg;
     }
 
     //function to get roll no of student
@@ -67,5 +73,9 @@ public class Student {
 
     public int getType() {
         return type;
+    }
+
+    public int getTotalMarks() {
+        return totalMarks;
     }
 }

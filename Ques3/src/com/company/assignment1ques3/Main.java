@@ -90,11 +90,11 @@ public class Main {
                                 batch.getStudentarray()[i].setMarksObtained(assignmentArray[l].getBaseMarks(), batch.getStudentarray()[i].getIntelligence());
                             }
                         }
-                        totalMarks = totalMarks + batch.getStudentarray()[i].getMarksObtained();
+                        batch.getStudentarray()[i].setTotalMarks(batch.getStudentarray()[i].getMarksObtained());
                         System.out.println(assignmentArray[l].getAssignmentId() + " " + assignmentArray[l].getCourseId() + " " + batch.getStudentarray()[i].getMarksObtained());
                     }
                 }
-                System.out.println(totalMarks);
+                System.out.println(batch.getStudentarray()[i].getTotalMarks());
             }
             testCases--;
         }

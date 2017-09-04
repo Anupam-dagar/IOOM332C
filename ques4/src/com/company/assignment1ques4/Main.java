@@ -6,13 +6,10 @@ public class Main {
     //main function
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int sum = 0;
         int testCases = scan.nextInt();
         //loop to run testcases
         while (testCases > 0)
         {
-            //sum variable for calculating total marks in each assignment
-            sum = 0;
             //variable j, k and z to insert in array of assignment typeZero, typeOne and typeTwo respectively
             int j = 0;
             int k = 0;
@@ -60,35 +57,36 @@ public class Main {
 
             }
             //output
+	    student.setSumZero();
             System.out.println(student.getRollno() + " " + student.getName());
             for (int i = 0; i < assignmentZeroArray.length; i++)
             {
                 if (assignmentZeroArray[i] != null) {
-                    sum = sum + assignmentZeroArray[i].getTotalMarks();
+                    student.setSum(assignmentZeroArray[i].getTotalMarks());
                     System.out.println(assignmentZeroArray[i].getAssignmentId() + " " + assignmentZeroArray[i].getTotalMarks());
                 }
             }
-            System.out.println(sum);
-            sum = 0;
+            System.out.println(student.getSum());
+            student.setSumZero();
             for (int i = 0; i < assignmentOneArray.length; i++)
             {
                 if (assignmentOneArray[i] != null)
                 {
-                sum = sum + assignmentOneArray[i].getTotalMarks();
-                System.out.println(assignmentOneArray[i].getAssignmentId() + " " + assignmentOneArray[i].getTotalMarks());
+                    student.setSum(assignmentOneArray[i].getTotalMarks());
+                    System.out.println(assignmentOneArray[i].getAssignmentId() + " " + assignmentOneArray[i].getTotalMarks());
                 }
             }
-            System.out.println(sum);
-            sum = 0;
+            System.out.println(student.getSum());
+            student.setSumZero();
             for (int i = 0; i < assignmentTwoArray.length; i++)
             {
                 if (assignmentTwoArray[i] != null)
                 {
-                sum = sum + assignmentTwoArray[i].getMarksGiven();
-                System.out.println(assignmentTwoArray[i].getAssignmentId() + " " + assignmentTwoArray[i].getMarksGiven());
+                    student.setSum(assignmentTwoArray[i].getMarksGiven());
+                    System.out.println(assignmentTwoArray[i].getAssignmentId() + " " + assignmentTwoArray[i].getMarksGiven());
                 }
             }
-            System.out.println(sum);
+            System.out.println(student.getSum());
             testCases--;
         }
         scan.close();

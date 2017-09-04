@@ -5,6 +5,7 @@ public class Student {
     //variable declaration
     private String rollno;
     private String name;
+    private int sum = 0;
 
     //Student class constructor
     public Student (String rollnoArg, String nameArg)
@@ -23,6 +24,16 @@ public class Student {
         name = nameArg;
     }
 
+    public void setSumZero()
+    {
+        sum = 0;
+    }
+
+    public void setSum(int totalMarks)
+    {
+        sum = sum + totalMarks;
+    }
+
     //getter function for rollno
     public String getRollno() {
         return rollno;
@@ -31,5 +42,9 @@ public class Student {
     //getter function for name
     public String getName() {
         return name;
+    }
+
+    public int getSum() {
+        return sum;
     }
 }
