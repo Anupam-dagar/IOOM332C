@@ -6,6 +6,7 @@ public class Student {
     private String name;
     private int intelligence;
     private int marksObtained;
+    private int totalMarks = 0;
 
     //student class constructor
     public Student(String rollNoArg, String nameArg, int intelligenceArg) {
@@ -29,6 +30,10 @@ public class Student {
         intelligence = intelligenceArg;
     }
 
+    public void setTotalMarks(int marksObtainedArg)
+    {
+        totalMarks = totalMarks + marksObtainedArg;
+    }
     //function to get roll no of student
     public String getRollNo() {
         return rollNo;
@@ -53,5 +58,9 @@ public class Student {
     //function to get marks obtained by student
     public int getMarksObtained() {
         return marksObtained;
+    }
+
+    public int getTotalMarks() {
+        return totalMarks;
     }
 }

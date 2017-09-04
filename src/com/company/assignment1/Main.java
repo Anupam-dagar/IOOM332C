@@ -8,13 +8,11 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         int testCases = scan.nextInt();
-        int totalMarks = 0;
         Assignment assignment = new Assignment();
 
         //loop to scan values and create objects
         while (testCases > 0)
         {
-            totalMarks = 0;
             String roll = scan.next();
             String name = scan.next();
             int intelligence = scan.nextInt();
@@ -50,11 +48,11 @@ public class Main {
                 if (student.getIntelligence() >= assignmentArray[i].getDifficulty())
                 {
                     student.setMarksObtained(assignmentArray[i].getBaseMarks(), student.getIntelligence());
-                    totalMarks = totalMarks + student.getMarksObtained();
+                    student.setTotalMarks(student.getMarksObtained());
                     System.out.println(assignmentArray[i].getAssignmentId() + " " + assignmentArray[i].getCourseId() + " " + student.getMarksObtained());
                 }
             }
-            System.out.println(totalMarks);
+            System.out.println(student.getTotalMarks());
             testCases--;
         }
         scan.close();
