@@ -6,8 +6,9 @@ public class PG extends Student {
     private int cgpa;
     private String thesisArea;
 
-    public PG (String department, String specialisation, int cgpa, String thesisArea)
+    public PG (String name, String rollNo, String course, int duration, int credits, String department, String specialisation, int cgpa, String thesisArea)
     {
+        super(name,rollNo,course,duration,credits);
         this.department = department;
         this.specialisation = specialisation;
         this.cgpa = cgpa;

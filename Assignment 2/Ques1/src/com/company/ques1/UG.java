@@ -4,8 +4,9 @@ public class UG extends Student {
     private String department;
     private int cgpa;
 
-    public UG (String department, int cgpa)
+    public UG (String name, String rollNo, String course, int duration, int credits, String department, int cgpa)
     {
+        super(name,rollNo,course,duration,credits);
         this.department = department;
         this.cgpa = cgpa;
     }

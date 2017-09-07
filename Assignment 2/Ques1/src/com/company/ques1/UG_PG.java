@@ -6,8 +6,9 @@ public class UG_PG extends Student {
     private String thesisArea;
     private int endYear;
 
-    public UG_PG (String specialisation, int cgpa, String thesisArea, int endYear)
+    public UG_PG (String name, String rollNo, String course, int duration, int credits, String specialisation, int cgpa, String thesisArea, int endYear)
     {
+        super(name,rollNo,course,duration,credits);
         this.specialisation = specialisation;
         this.cgpa = cgpa;
         this.thesisArea = thesisArea;
