@@ -61,7 +61,6 @@ public class UG_PG extends Student {
 
     public boolean canGraduate(UG_PG student)
     {
-        System.out.println(student.getDuration() + " " + student.getCredits());
         if (student.getDuration() >= 5 && student.getDuration() <= 8 && student.getCredits() >= 265)
         {
             graduate = true;

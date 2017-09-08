@@ -24,7 +24,8 @@ public class Main {
             {
                 String fixedString = scan.next();
                 studentArray[i] = new Student();
-                if (studentArray[i].getCourse().compareTo("UG") == 0)
+                studentArray[i].setCourse(fixedString);
+                if (fixedString.compareTo("UG") == 0)
                 {
                     rollNo = scan.next();
                     name = scan.next();
@@ -36,13 +37,12 @@ public class Main {
                     if (ug.canGraduate(ug))
                     {
 
-                        studentArray[i].setCourse(fixedString);
                         studentArray[i] = ug;
                         studentArray[i].setCgpa(cgpa);
                         studentArray[i].setDepartment(department);
                     }
                 }
-                if (studentArray[i].getCourse().compareTo("PG") == 0)
+                if (fixedString.compareTo("PG") == 0)
                 {
                     rollNo = scan.next();
                     name = scan.next();
@@ -61,7 +61,7 @@ public class Main {
                         studentArray[i].setSpecialization(specialisation);
                     }
                 }
-                if (studentArray[i].getCourse().compareTo("UG+PG") == 0)
+                if (fixedString.compareTo("UG+PG") == 0)
                 {
                     rollNo = scan.next();
                     name = scan.next();
@@ -81,7 +81,7 @@ public class Main {
                         studentArray[i].setSpecialization(specialisation);
                     }
                 }
-                if (studentArray[i].getCourse().compareTo("PhD") == 0)
+                if (fixedString.compareTo("PhD") == 0)
                 {
                     rollNo = scan.next();
                     name = scan.next();
@@ -94,7 +94,7 @@ public class Main {
                         studentArray[i] = phd;
                     }
                 }
-                if (studentArray[i].getCourse().compareTo("PG+PhD") == 0)
+                if (fixedString.compareTo("PG+PhD") == 0)
                 {
                     rollNo = scan.next();
                     name = scan.next();
@@ -111,13 +111,17 @@ public class Main {
                     }
                 }
             }
-            System.out.println(studentArray.length);
+            Student student = new Student();
+            student.setTotalGrad(studentArray);
+            System.out.println(student.getTotalGrad());
             for (int i = 0; i < studentArray.length ; i++)
             {
-                if (studentArray[i].getCourse().compareTo("UG") == 0)
+                if (studentArray[i].getName() != null)
                 {
-                    System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getDepartment() + " " + studentArray[i].getCgpa());
-                }
+                    if (studentArray[i].getCourse().compareTo("UG") == 0)
+                    {
+                        System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getDepartment() + " " + studentArray[i].getCgpa());
+                    }
                 if (studentArray[i].getCourse().compareTo("PG") == 0)
                 {
                     System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getDepartment() + " " + studentArray[i].getSpecialization() + " " + studentArray[i].getCgpa());
@@ -133,6 +137,7 @@ public class Main {
                 if (studentArray[i].getCourse().compareTo("PG+PhD") == 0)
                 {
                     System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getCgpa());
+                }
                 }
             }
         }

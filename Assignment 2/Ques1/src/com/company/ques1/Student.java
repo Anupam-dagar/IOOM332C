@@ -9,6 +9,7 @@ public class Student {
     private String department;
     private String specialization;
     private int cgpa;
+    private int totalGrad;
 
     public Student(){}
     public Student (String name, String rollNo, String course, int duration, int credits)
@@ -82,5 +83,19 @@ public class Student {
 
     public String getSpecialization() {
         return specialization;
+    }
+
+    public void setTotalGrad(Student[] studentArray) {
+        for (int i = 0; i < studentArray.length; i++)
+        {
+            if (studentArray[i].getName() != null)
+            {
+                totalGrad = totalGrad + 1;
+            }
+        }
+    }
+
+    public int getTotalGrad() {
+        return totalGrad;
     }
 }
