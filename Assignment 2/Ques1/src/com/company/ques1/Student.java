@@ -6,6 +6,9 @@ public class Student {
     private String course;
     private int duration;
     private int credits;
+    private String department;
+    private String specialization;
+    private int cgpa;
 
     public Student(){}
     public Student (String name, String rollNo, String course, int duration, int credits)
@@ -37,6 +40,18 @@ public class Student {
         this.credits = credits;
     }
 
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+
+    public void setCgpa(int cgpa) {
+        this.cgpa = cgpa;
+    }
+
     public String getName() {
         return name;
     }
@@ -55,5 +70,17 @@ public class Student {
 
     public int getCredits() {
         return credits;
+    }
+
+    public int getCgpa() {
+        return cgpa;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public String getSpecialization() {
+        return specialization;
     }
 }

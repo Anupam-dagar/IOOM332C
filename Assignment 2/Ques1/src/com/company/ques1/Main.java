@@ -22,10 +22,9 @@ public class Main {
             Student[] studentArray = new Student[n];
             for (int i = 0; i < n ; i++)
             {
-                Student student = new Student();
                 String fixedString = scan.next();
-                student.setCourse(fixedString);
-                if (student.getCourse() == "UG")
+                studentArray[i] = new Student();
+                if (studentArray[i].getCourse().compareTo("UG") == 0)
                 {
                     rollNo = scan.next();
                     name = scan.next();
@@ -33,10 +32,17 @@ public class Main {
                     duration = scan.nextInt();
                     cgpa = scan.nextInt();
                     credits = scan.nextInt();
-                    UG ug = new UG(name, rollNo, student.getCourse(), duration, credits, department, cgpa);
-                    studentArray[i] = ug;
+                    UG ug = new UG(name, rollNo, studentArray[i].getCourse(), duration, credits, department, cgpa);
+                    if (ug.canGraduate(ug))
+                    {
+
+                        studentArray[i].setCourse(fixedString);
+                        studentArray[i] = ug;
+                        studentArray[i].setCgpa(cgpa);
+                        studentArray[i].setDepartment(department);
+                    }
                 }
-                if (student.getCourse() == "PG")
+                if (studentArray[i].getCourse().compareTo("PG") == 0)
                 {
                     rollNo = scan.next();
                     name = scan.next();
@@ -46,10 +52,16 @@ public class Main {
                     cgpa = scan.nextInt();
                     credits = scan.nextInt();
                     thesisArea = scan.next();
-                    PG pg = new PG(name, rollNo, student.getCourse(), duration, credits, department, specialisation, cgpa, thesisArea);
-                    studentArray[i] = pg;
+                    PG pg = new PG(name, rollNo, studentArray[i].getCourse(), duration, credits, department, specialisation, cgpa, thesisArea);
+                    if (pg.canGraduate(pg))
+                    {
+                        studentArray[i] = pg;
+                        studentArray[i].setCgpa(cgpa);
+                        studentArray[i].setDepartment(department);
+                        studentArray[i].setSpecialization(specialisation);
+                    }
                 }
-                if (student.getCourse() == "UG+PG")
+                if (studentArray[i].getCourse().compareTo("UG+PG") == 0)
                 {
                     rollNo = scan.next();
                     name = scan.next();
@@ -60,8 +72,67 @@ public class Main {
                     credits = scan.nextInt();
                     thesisArea = scan.next();
                     endYear = scan.nextInt();
-                    UG_PG ugpg = new UG_PG(name, rollNo, student.getCourse(), duration, credits, specialisation, cgpa, thesisArea, endYear);
-                    studentArray[i] = ugpg;
+                    UG_PG ugpg = new UG_PG(name, rollNo, studentArray[i].getCourse(), duration, credits, specialisation, cgpa, thesisArea, endYear, department);
+                    if (ugpg.canGraduate(ugpg))
+                    {
+                        studentArray[i] = ugpg;
+                        studentArray[i].setCgpa(cgpa);
+                        studentArray[i].setDepartment(department);
+                        studentArray[i].setSpecialization(specialisation);
+                    }
+                }
+                if (studentArray[i].getCourse().compareTo("PhD") == 0)
+                {
+                    rollNo = scan.next();
+                    name = scan.next();
+                    duration = scan.nextInt();
+                    credits = scan.nextInt();
+                    thesisArea = scan.next();
+                    Phd phd = new Phd(name, rollNo, studentArray[i].getCourse(), duration, credits, thesisArea);
+                    if (phd.canGraduate(phd))
+                    {
+                        studentArray[i] = phd;
+                    }
+                }
+                if (studentArray[i].getCourse().compareTo("PG+PhD") == 0)
+                {
+                    rollNo = scan.next();
+                    name = scan.next();
+                    duration = scan.nextInt();
+                    cgpa = scan.nextInt();
+                    credits = scan.nextInt();
+                    thesisArea = scan.next();
+                    endYear = scan.nextInt();
+                    PG_Phd pg_phd = new PG_Phd(name, rollNo, studentArray[i].getCourse(), duration, credits, cgpa, thesisArea, endYear);
+                    if (pg_phd.canGraduate(pg_phd))
+                    {
+                        studentArray[i] = pg_phd;
+                        studentArray[i].setCgpa(cgpa);
+                    }
+                }
+            }
+            System.out.println(studentArray.length);
+            for (int i = 0; i < studentArray.length ; i++)
+            {
+                if (studentArray[i].getCourse().compareTo("UG") == 0)
+                {
+                    System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getDepartment() + " " + studentArray[i].getCgpa());
+                }
+                if (studentArray[i].getCourse().compareTo("PG") == 0)
+                {
+                    System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getDepartment() + " " + studentArray[i].getSpecialization() + " " + studentArray[i].getCgpa());
+                }
+                if (studentArray[i].getCourse().compareTo("UG+PG") == 0)
+                {
+                    System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getDepartment() + " " + studentArray[i].getSpecialization() + " " + studentArray[i].getCgpa());
+                }
+                if (studentArray[i].getCourse().compareTo("PhD") == 0)
+                {
+                    System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse());
+                }
+                if (studentArray[i].getCourse().compareTo("PG+PhD") == 0)
+                {
+                    System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getCgpa());
                 }
             }
         }
