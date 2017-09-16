@@ -20,7 +20,6 @@ public class Phd extends Student {
 
     public boolean canGraduate(Phd student)
     {
-        if (student.getDuration() >= 2 && student.getDuration() <= 6 && student.getCredits() >= 64)
         {
             graduate = true;
         }

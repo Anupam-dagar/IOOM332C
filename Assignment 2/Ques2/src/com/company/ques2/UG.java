@@ -21,7 +21,6 @@ public class UG extends Student {
 
     public boolean canGraduate(UG student)
     {
-        if (student.getDuration() >= 4 && student.getDuration() <= 7 && student.getCredits() >= 185 )
         {
             graduate = true;
         }

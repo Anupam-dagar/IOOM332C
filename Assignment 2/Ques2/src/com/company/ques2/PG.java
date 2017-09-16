@@ -42,10 +42,7 @@ public class PG extends Student {
 
     public boolean canGraduate(PG student)
     {
-        if (student.getDuration() >= 2 && student.getDuration() <= 4 && student.getCredits() >= 80)
-        {
             graduate = true;
-        }
         return graduate;
     }
 }
