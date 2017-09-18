@@ -1,7 +1,7 @@
 package com.company.ques1;
 
 import java.util.Scanner;
-
+//main class
 public class Main {
 
     public static void main(String[] args) {
@@ -9,6 +9,7 @@ public class Main {
         int testcases = scan.nextInt();
         while(testcases-- > 0)
         {
+            //variable declaration
             String rollNo;
             String name;
             String department;
@@ -22,9 +23,10 @@ public class Main {
             Student[] studentArray = new Student[n];
             for (int i = 0; i < n ; i++)
             {
-                String fixedString = scan.next();
+                String fixedString = scan.next(); //scan course of student
                 studentArray[i] = new Student();
                 studentArray[i].setCourse(fixedString);
+                //input for UG course
                 if (fixedString.compareTo("UG") == 0)
                 {
                     rollNo = scan.next();
@@ -42,6 +44,7 @@ public class Main {
                         studentArray[i].setDepartment(department);
                     }
                 }
+                //input for PG course
                 if (fixedString.compareTo("PG") == 0)
                 {
                     rollNo = scan.next();
@@ -61,6 +64,7 @@ public class Main {
                         studentArray[i].setSpecialization(specialisation);
                     }
                 }
+                //input for UG+PG course
                 if (fixedString.compareTo("UG+PG") == 0)
                 {
                     rollNo = scan.next();
@@ -81,6 +85,7 @@ public class Main {
                         studentArray[i].setSpecialization(specialisation);
                     }
                 }
+                //input for PhD course
                 if (fixedString.compareTo("PhD") == 0)
                 {
                     rollNo = scan.next();
@@ -94,6 +99,7 @@ public class Main {
                         studentArray[i] = phd;
                     }
                 }
+                //input for Pg+PhD course
                 if (fixedString.compareTo("PG+PhD") == 0)
                 {
                     rollNo = scan.next();
@@ -111,6 +117,7 @@ public class Main {
                     }
                 }
             }
+            //output
             Student student = new Student();
             student.setTotalGrad(studentArray);
             System.out.println(student.getTotalGrad());

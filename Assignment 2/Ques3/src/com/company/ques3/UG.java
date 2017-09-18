@@ -1,22 +1,29 @@
-package com.company.ques2;
-//UG class(child)
-public class UG extends Student {
-    //variable declaration
-    private String department;
+package com.company.ques3;
 
-    //UG class constructor
+public class UG extends Student {
+    private String department;
+    private boolean graduate;
     public UG (String name, String rollNo, String course, int duration)
     {
         super(name,rollNo,course,duration);
+        graduate = false;
     }
 
-    //setter function for department
     public void setDepartment(String department) {
         this.department = department;
     }
 
-    //getter function for department
+
     public String getDepartment() {
         return department;
+    }
+
+
+    public boolean canGraduate(UG student)
+    {
+        {
+            graduate = true;
+        }
+        return graduate;
     }
 }

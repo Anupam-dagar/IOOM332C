@@ -1,6 +1,6 @@
-package com.company.ques2;
+package com.company.ques3;
 import java.util.Scanner;
-//main class
+
 public class Main {
 
     public static void main(String[] args) {
@@ -8,7 +8,6 @@ public class Main {
         int testcases = scan.nextInt();
         while(testcases-- > 0)
         {
-            //variable declaration
             String rollNo;
             String name;
             String department;
@@ -20,7 +19,15 @@ public class Main {
             String courseCode;
             int credits;
             int attendence;
-            String grade;
+            int midSem;
+            int endSem;
+            int assesment;
+            int assignment;
+            int quiz;
+            int viva;
+            int continuous;
+            int supervisor;
+            int noOfPanelist;
             int n = scan.nextInt(); //n is number of students
             Student[] studentArray = new Student[n];
             for (int i = 0; i < n ; i++)
@@ -28,7 +35,6 @@ public class Main {
                 String fixedString = scan.next();
                 studentArray[i] = new Student();
                 studentArray[i].setCourse(fixedString);
-                //input for UG course
                 if (fixedString.compareTo("UG") == 0)
                 {
                     rollNo = scan.next();
@@ -42,7 +48,6 @@ public class Main {
                         studentArray[i].setDepartment(department);
                     }
                 }
-                //input for PG course
                 if (fixedString.compareTo("PG") == 0)
                 {
                     rollNo = scan.next();
@@ -59,7 +64,6 @@ public class Main {
                         studentArray[i].setSpecialization(specialisation);
                     }
                 }
-                //input for UG+PG course
                 if (fixedString.compareTo("UG+PG") == 0)
                 {
                     rollNo = scan.next();
@@ -77,7 +81,6 @@ public class Main {
                         studentArray[i].setSpecialization(specialisation);
                     }
                 }
-                //input for PhD course
                 if (fixedString.compareTo("PhD") == 0)
                 {
                     rollNo = scan.next();
@@ -90,7 +93,6 @@ public class Main {
                         studentArray[i] = phd;
                     }
                 }
-                //input for PG+PhD course
                 if (fixedString.compareTo("PG+PhD") == 0)
                 {
                     rollNo = scan.next();
@@ -108,63 +110,55 @@ public class Main {
             int m = scan.nextInt();
             for (int i = 0; i < m; i++)
             {
-                courseCode = scan.next();
-                credits  = scan.nextInt();
-                rollNo = scan.next();
-                attendence = scan.nextInt();
-                grade = scan.next();
-                int studentIndex = 0;
-                //search for student index
-                for (int j = 0; j < studentArray.length; j++) {
-                    if (studentArray[j].getRollNo().compareTo(rollNo) == 0)
-                    {
-                        studentIndex = j;
-                        break;
-                    }
-                }
-                if (attendence >= 75 && grade.compareTo("F") != 0)
+                String fixedString = scan.next();
+                if (fixedString.compareTo("T") == 0)
                 {
-                    studentArray[studentIndex].setGrade(grade);
-                    studentArray[studentIndex].setTempSum(credits, grade);
-                    studentArray[studentIndex].increaseCredits(credits);
+                    courseCode = scan.next();
+                    credits = scan.nextInt();
+                    rollNo = scan.next();
+                    attendence = scan.nextInt();
+                    midSem = scan.nextInt();
+                    endSem = scan.nextInt();
+                    assignment = scan.nextInt();
+                    quiz = scan.nextInt();
+                    assesment = scan.nextInt();
+                    Theory theory = new Theory(midSem, endSem, courseCode, credits, rollNo, assignment, quiz, assesment, attendence);
+                    studentArray[i].getCourseArray()[i] = new Course();
+                    studentArray[i].getCourseArray()[i] = theory;
+                }
+                if (fixedString.compareTo("L") == 0)
+                {
+                    courseCode = scan.next();
+                    credits = scan.nextInt();
+                    rollNo = scan.next();
+                    attendence = scan.nextInt();
+                    midSem = scan.nextInt();
+                    endSem = scan.nextInt();
+                    viva = scan.nextInt();
+                    continuous = scan.nextInt();
+                    Lab lab = new Lab(midSem, endSem, courseCode, credits, rollNo, viva, attendence, continuous);
+                    studentArray[i].getCourseArray()[i] = new Course();
+                    studentArray[i].getCourseArray()[i] = lab;
+                }
+                if (fixedString.compareTo("P") == 0)
+                {
+                    courseCode = scan.next();
+                    credits = scan.nextInt();
+                    rollNo = scan.next();
+                    supervisor = scan.nextInt();
+                    noOfPanelist = scan.nextInt();
+                    Project project = new Project(courseCode, credits, rollNo, supervisor, noOfPanelist);
+                    for (int j = 0; j < noOfPanelist; j++) {
+                        midSem = scan.nextInt();
+                        endSem = scan.nextInt();
+                        project.insertMidMarks(j,midSem);
+                        project.insertEndMarks(j, endSem);
+                    }
+
                 }
             }
 
-            //output
-            Student student = new Student();
-            student.setCount(studentArray);
-            System.out.println(student.getCount());
-            for (int i = 0; i < studentArray.length; i++) {
-                if (studentArray[i].getCourse().compareTo("UG") == 0) {
-                    if (studentArray[i].getCredits() >= 185) {
-                        studentArray[i].setCgpa();
-                        System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getDepartment() + " " + studentArray[i].getCgpa());
-                    }
-                }
-                if (studentArray[i].getCourse().compareTo("PG") == 0) {
-                    if (studentArray[i].getCredits() >= 80){
-                        studentArray[i].setCgpa();
-                        System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getDepartment() + " " + studentArray[i].getSpecialization() + " " + studentArray[i].getCgpa());
-                    }
-                }
-                if (studentArray[i].getCourse().compareTo("UG+PG") == 0) {
-                    if (studentArray[i].getCredits() >= 265) {
-                        studentArray[i].setCgpa();
-                        System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getDepartment() + " " + studentArray[i].getSpecialization() + " " + studentArray[i].getCgpa());
-                    }
-                }
-                if (studentArray[i].getCourse().compareTo("PhD") == 0) {
-                    if (studentArray[i].getCredits() >= 64) {
-                        System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse());
-                    }
-                }
-                if (studentArray[i].getCourse().compareTo("PG+PhD") == 0) {
-                    if (studentArray[i].getCredits() >= 138) {
-                        studentArray[i].setCgpa();
-                        System.out.println(studentArray[i].getRollNo() + " " + studentArray[i].getName() + " " + studentArray[i].getCourse() + " " + studentArray[i].getCgpa());
-                    }
-                }
-            }
+
         }
     }
 }
