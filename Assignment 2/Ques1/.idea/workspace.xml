@@ -2,24 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b2ae974-4de7-4a05-9f12-3f7c1405813d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/Batch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/Graduate.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/Main.class" afterPath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/PG.class" afterPath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/PG.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/PG_Phd.class" afterPath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/PG_Phd.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/Phd.class" afterPath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/Phd.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/Student.class" afterPath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/Student.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/UG.class" afterPath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/UG.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/UG_PG.class" afterPath="$PROJECT_DIR$/out/production/Ques1/com/company/ques1/UG_PG.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ques1/Main.java" afterPath="$PROJECT_DIR$/src/com/company/ques1/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ques1/PG.java" afterPath="$PROJECT_DIR$/src/com/company/ques1/PG.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ques1/PG_Phd.java" afterPath="$PROJECT_DIR$/src/com/company/ques1/PG_Phd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ques1/Phd.java" afterPath="$PROJECT_DIR$/src/com/company/ques1/Phd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ques1/Student.java" afterPath="$PROJECT_DIR$/src/com/company/ques1/Student.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ques1/UG.java" afterPath="$PROJECT_DIR$/src/com/company/ques1/UG.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ques1/UG_PG.java" afterPath="$PROJECT_DIR$/src/com/company/ques1/UG_PG.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ques2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Ques2/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/Main.java" afterPath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/PG.java" afterPath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/PG.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/PG_Phd.java" afterPath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/PG_Phd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/Phd.java" afterPath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/Phd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/Student.java" afterPath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/Student.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/UG.java" afterPath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/UG.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/UG_PG.java" afterPath="$PROJECT_DIR$/../Ques2/src/com/company/ques2/UG_PG.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,21 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ques1/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="25" />
+            <state relative-caret-position="18">
+              <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Student.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/ques1/Student.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1548">
-              <caret line="120" column="1" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="120" selection-end-column="1" />
+            <state relative-caret-position="36">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -54,8 +44,8 @@
       <file leaf-file-name="UG.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ques1/UG.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="504">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,8 +54,8 @@
       <file leaf-file-name="PG.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ques1/PG.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="71" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state relative-caret-position="231">
+              <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -129,12 +119,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/company/ques1/Student.java" />
         <option value="$PROJECT_DIR$/src/com/company/ques1/UG.java" />
         <option value="$PROJECT_DIR$/src/com/company/ques1/PG.java" />
         <option value="$PROJECT_DIR$/src/com/company/ques1/UG_PG.java" />
         <option value="$PROJECT_DIR$/src/com/company/ques1/Phd.java" />
         <option value="$PROJECT_DIR$/src/com/company/ques1/PG_Phd.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ques1/Count.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ques1/Student.java" />
         <option value="$PROJECT_DIR$/src/com/company/ques1/Main.java" />
       </list>
     </option>
@@ -146,7 +137,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -159,7 +150,34 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Ques1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ques1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ques1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ques1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ques1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ques1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ques1" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -229,10 +247,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -243,7 +261,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -254,7 +272,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -267,14 +284,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/ques1/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ques1/UG.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -637,30 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ques1/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1548">
-          <caret line="120" column="1" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="120" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ques1/UG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ques1/PG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ques1/UG_PG.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
@@ -688,10 +673,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ques1/PG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ques1/Count.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/ques1/Main.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ques1/UG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ques1/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="25" />
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>

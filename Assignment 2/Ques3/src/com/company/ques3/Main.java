@@ -108,6 +108,13 @@ public class Main {
                 }
             }
             int m = scan.nextInt();
+            int counterT = 0;
+            int counterL = 0;
+            int counterP = 0;
+            int studentIndex;
+            for (int i = 0; i < studentArray.length; i++) {
+                studentArray[i].setCourseArray(m);
+            }
             for (int i = 0; i < m; i++)
             {
                 String fixedString = scan.next();
@@ -123,8 +130,16 @@ public class Main {
                     quiz = scan.nextInt();
                     assesment = scan.nextInt();
                     Theory theory = new Theory(midSem, endSem, courseCode, credits, rollNo, assignment, quiz, assesment, attendence);
-                    studentArray[i].getCourseArray()[i] = new Course();
-                    studentArray[i].getCourseArray()[i] = theory;
+                    studentIndex = studentArray[i].studentSearch(studentArray, rollNo);
+                    studentArray[studentIndex].getCourseArray()[counterT] = new Course();
+                    studentArray[studentIndex].getCourseArray()[counterT] = theory;
+                    studentArray[studentIndex].getCourseArray()[counterT].setMidMarks(midSem);
+                    studentArray[studentIndex].getCourseArray()[counterT].setEndMarks(endSem);
+                    studentArray[studentIndex].getCourseArray()[counterT].setAssignment(assignment);
+                    studentArray[studentIndex].getCourseArray()[counterT].setQuiz(quiz);
+                    studentArray[studentIndex].getCourseArray()[counterT].setAssessment(assesment);
+                    studentArray[studentIndex].getCourseArray()[counterT].setAttendence(attendence);
+                    studentArray[studentIndex].increaseCounter(counterT);
                 }
                 if (fixedString.compareTo("L") == 0)
                 {
@@ -137,8 +152,15 @@ public class Main {
                     viva = scan.nextInt();
                     continuous = scan.nextInt();
                     Lab lab = new Lab(midSem, endSem, courseCode, credits, rollNo, viva, attendence, continuous);
-                    studentArray[i].getCourseArray()[i] = new Course();
-                    studentArray[i].getCourseArray()[i] = lab;
+                    studentIndex = studentArray[i].studentSearch(studentArray, rollNo);
+                    studentArray[studentIndex].getCourseArray()[counterL] = new Course();
+                    studentArray[studentIndex].getCourseArray()[counterL] = lab;
+                    studentArray[studentIndex].getCourseArray()[counterL].setViva(viva);
+                    studentArray[studentIndex].getCourseArray()[counterL].setAttendence(attendence);
+                    studentArray[studentIndex].getCourseArray()[counterL].setAssessment(continuous);
+                    studentArray[studentIndex].getCourseArray()[counterL].setMidMarks(midSem);
+                    studentArray[studentIndex].getCourseArray()[counterL].setEndMarks(endSem);
+                    studentArray[studentIndex].increaseCounter(counterL);
                 }
                 if (fixedString.compareTo("P") == 0)
                 {
@@ -148,16 +170,27 @@ public class Main {
                     supervisor = scan.nextInt();
                     noOfPanelist = scan.nextInt();
                     Project project = new Project(courseCode, credits, rollNo, supervisor, noOfPanelist);
+                    studentIndex = studentArray[i].studentSearch(studentArray, rollNo);
+                    studentArray[studentIndex].getCourseArray()[counterP] = new Course();
+                    studentArray[studentIndex].getCourseArray()[counterP] = project;
+                    studentArray[studentIndex].getCourseArray()[counterP].setMidSemArray(noOfPanelist);
+                    studentArray[studentIndex].getCourseArray()[counterP].setEndSemArray(noOfPanelist);
                     for (int j = 0; j < noOfPanelist; j++) {
                         midSem = scan.nextInt();
                         endSem = scan.nextInt();
                         project.insertMidMarks(j,midSem);
                         project.insertEndMarks(j, endSem);
+                        studentArray[studentIndex].getCourseArray()[counterP].insertMidSem(midSem, j);
+                        studentArray[studentIndex].getCourseArray()[counterP].insertEndSem(endSem, j);
                     }
-
+                    studentArray[studentIndex].increaseCounter(counterP);
                 }
             }
 
+            for (int i = 0; i < studentArray.length; i++)
+            {
+                studentArray[i].computeResult(studentArray);
+            }
 
         }
     }

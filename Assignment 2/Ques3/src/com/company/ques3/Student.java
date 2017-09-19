@@ -17,7 +17,7 @@ public class Student {
     private double tempSum;
     private int count;
     private Course[] courseArray;
-
+    private int counter;
     public Student(){}
     public Student (String name, String rollNo, String course, int duration)
     {
@@ -31,8 +31,13 @@ public class Student {
         courseCode = "";
         count = 0;
         courseArray = new Course[2000];
+        counter = 0;
     }
 
+    public void increaseCounter(int counterIndex)
+    {
+        counter = counterIndex + 1;
+    }
     public void setCourseArray(int size)
     {
         courseArray = new Course[size];
@@ -206,6 +211,29 @@ public class Student {
         }
     }
 
+    public int studentSearch(Student[] studentArray, String rollNo)
+    {
+        int studentIndex = 0;
+        for (int i = 0; i < studentArray.length; i++) {
+            if (rollNo.compareTo(studentArray[i].getRollNo()) == 0)
+            {
+                studentIndex = i;
+                break;
+            }
+        }
+
+        return studentIndex;
+    }
+
+    public void computeResult(Student[] studentArray)
+    {
+        for (int i = 0; i < studentArray.length; i++)
+        {
+            for (int j = 0; j < studentArray[i].getCourseArray().length; j++) {
+                if (studentArray[i].getCourseArray()[j].)
+            }
+        }
+    }
     public int getCount() {
         return count;
     }
